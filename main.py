@@ -42,7 +42,6 @@ class Song(object):
         return dest
 
     def from_dict(source):
-        # [START_EXCLUDE]
         song = Song(source[u'artist'], source[u'cover'], source[u'link'], source['title'])
 
         if u'artist' in source:
@@ -56,9 +55,7 @@ class Song(object):
 
         if u'title' in source:
             song.title = source[u'title']
-
         return song
-        # [END_EXCLUDE]
 
 
 def get_all_songs():
@@ -138,9 +135,9 @@ else:
 
 fetch_response(headers)
 
-if input("Upload to Firestore? (Preview your songs) [Y/N]") == "Y":
+if input("Upload to Firestore? (Preview your songs) [Y/N] ") == "Y":
     add_to_firestore()
     print("\n \nDone")
 
 else:
-    print("Goodbye?")
+    print("Will not add to Firestore, byebye!")
